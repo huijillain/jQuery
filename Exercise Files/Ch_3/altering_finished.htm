@@ -11,16 +11,16 @@
         //$("#example").empty();
         //$("#example p.a, #example p.b").remove();// separated by ,
         //$("#example p.a, #example p.b").detach(); // temparately remove p.a & p.b BUT embedded data & event handler is still there
-        //$("<div>replaced</div>").replaceAll("#example p[id]");
+        //$("<div>replaced</div>").replaceAll("#example p[id]"); // these two lines are the same depending on which part put first
         //$("#example p[id]").replaceWith("<div>replaced</div>");
-        //$("#example p").replaceWith(replacementFn);
+        $("#example p").replaceWith(replacementFn); // Need to add function replaceentFn below
       });
 
       function replacementFn() {
         if ($(this).text().indexOf("1") != -1) {
           return "<p>This is paragraph uno</p>";
         } else {
-          return this.outerHTML;
+          return this.outerHTML; // If nothing found, take it as is, do not change anything
         }
       }
     </script>
