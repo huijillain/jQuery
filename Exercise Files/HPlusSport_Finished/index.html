@@ -14,6 +14,7 @@
             $("#products h2.product-name[data-type='vitamin']").css("background-color", "#12500F");
             $("#products h2.product-name[data-type='proteinbar']").css("background-color", "#4E0F50");
 
+            // add eventListener to each of the checkbox to listen to the change event; Event changes when checkbox chagnes.
             document.querySelector('#cbVitamins').addEventListener('change',function (evt) {
                 updateProductView("vitamins", evt.target.checked);
             });
@@ -37,6 +38,7 @@
         function updateProductView(categoryName, bVisible) {
             // get a list of the product items for the given category.
             // Use the data attributes to narrow the list
+            // get the string variable"" contains selector-dataSelector which will select h2 data
             var dataSelectorVal = "";
             switch (categoryName) {
             case "vitamins":
@@ -51,6 +53,7 @@
             }
             // use the has() function to select the li tags that are product items
             // that contain the h2 tag with the corresponding data attribute value
+            // each list item has data-type, then call .css function display property to remove "" or display "none"
             $(".product-item").has(dataSelectorVal).css('display', bVisible ? "" : "none");
         }
     </script>
@@ -103,7 +106,7 @@
             <h2 class="headline">Products</h2>
             <p>H+ Sport is <em>dedicated to creating</em> eco-friendly, high-quality, nutrient-rich, nutritional products that <em>enhance active lifestyles</em>. We <a href="#guarantee">guarantee</a> it. Take a look at some of our products.</p>
         </div>
-        <!-- container -->
+        <!-- container, add a div to contain the checkbox use to show & hide the elements -->
         <div id="productControls">
             <form>
                 <div>
