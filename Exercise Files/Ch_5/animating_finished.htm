@@ -18,10 +18,10 @@
         });
         $("#all").click(function () {
           $("#theDiv").animate(
-            { left: "500", fontSize: "24pt", width: "500px" },
+            { left: "+=500", fontSize: "24pt", width: "500px" },
             1000,
             "swing"
-          ); // all properties act at the same time
+          ); // All properties act at the same time. Can specify width "200%"
         });
       });
     </script>
@@ -36,7 +36,7 @@
         border: 1px solid black;
         font-size: 16pt;
         cursor: pointer;
-        left: 100px;
+        /* left: 100px; */
       }
 
       button {
