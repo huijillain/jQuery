@@ -25,10 +25,13 @@
                 updateProductView("proteinbar", evt.target.checked);
             });
 
+            // Each product has data-prod_id. Use a selector expression .product-item to get all productTag containing each product. 
+            // Then use children function to get h2 tag inside the item, to call text function on h2 to get prodName.
             $(".product-item").each(function () {
                 var prodName = encodeURIComponent($(this).children("h2").text());
                 var prodID = encodeURIComponent($(this).data("prod_id"));
 
+                // Create a new link tag. Use wrap function to wrap new link around the image.
                 var link = $("<a href='product.html?prodName=" + prodName + "&prodID=" + prodID + "'/>");
                 $(this).children("img").wrap(link);
             })
